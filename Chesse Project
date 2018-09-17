@@ -1,1 +1,66 @@
 
+import java.util.Scanner;
+
+public class chesss {
+
+    /**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("We sell 3 kinds of Cheese");
+		System.out.println("Dalaran Sharp: $1.25 per pound");
+		System.out.println("Stormwind Brie: $10.00 per pound");
+		System.out.println("Alterac Swiss: $40.00 per pound");
+
+		System.out.print("Enter the amount of Sharp: ");
+		int s = input.nextInt();
+		System.out.print("Enter the amount of Brie: ");
+		int B = input.nextInt();
+		System.out.print("Enter the amount of Swiss: ");
+		int S = input.nextInt();
+
+		double s1 = s * 1.25;
+		double B1 = B * 10.00;
+		double S1 = S * 40.00;
+		{
+			System.out.print("Display the itemized list? (1 for yes) ");
+			int detailed = input.nextInt();
+
+			if (detailed == 1) {
+			 if (s !=0)
+				System.out.println(+s + " lbs of Sharp @ $1.25 = $" + s1);
+			 if (B !=0)
+				System.out.println(+B + " lbs of Brie @ $10.00 = $" + B1);
+			 if (S !=0)
+				System.out.println(+S + " lbs of Swiss @ $40.00 =  $" + S1);
+			} 
+
+
+			{
+				double subtotal = s1 + B1 + S1;
+
+				if (subtotal >= 100) {
+					System.out.println("Sub Total: $" + subtotal);
+					System.out.println("-Discount: $25.0");
+					System.out.print("Total    : $" + (subtotal - 25.00));
+				}
+
+				else if (subtotal >= 50) {
+					System.out.println("Sub Total: $" + subtotal);
+					System.out.println("-Discount: $10.0");
+					System.out.print("Total    : $" + (subtotal - 10.00));
+				}
+					else  {
+						System.out.println("Sub Total: $" + subtotal);
+						System.out.println("-Discount: $0.0");
+						System.out.print("Total    : $" + (subtotal));
+					
+				}
+			}
+		}
+	}
+}
